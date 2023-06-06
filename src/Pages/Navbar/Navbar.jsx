@@ -31,11 +31,14 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link to={'/'}>Bookings</Link>
+              <Link to={'/bookedTicket'}>Bookings</Link>
             </li>
           </ul>
         </div>
-        <Link to={'/'} className="btn btn-ghost font-serif normal-case text-xl text-white">
+        <Link
+          to={'/'}
+          className="btn btn-ghost font-serif normal-case text-xl text-white"
+        >
           Movie House
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +63,7 @@ const Navbar = () => {
           </li>
 
           <li>
-            <Link to={'/'}>Bookings</Link>
+            <Link to={`/bookedTicket`}>Bookings</Link>
           </li>
         </ul>
       </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../Navbar/Navbar';
 
 const Home = () => {
   const [shows, setShows] = useState([]);
@@ -44,43 +45,47 @@ const Home = () => {
   const visibleShows = showAllData ? sortedShows : sortedShows.slice(0, 6);
 
   return (
-    <div className="container mx-auto py-8">
-      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {visibleShows.map((show) => (
-          <li
-            key={show.show.id}
-            className="bg-white rounded shadow p-6 flex flex-col justify-between"
-          >
-            <div>
-              <img
-                className="h-64 w-full object-cover"
-                src={show.show.image.original}
-                alt=""
-              />
-              <h2 className="text-xl font-bold mb-2">{show.show.name}</h2>
-            </div>
-            <div className="mt-4">
-              <button
-                className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-semibold py-2 px-4 rounded"
-                onClick={() => redirectToDetails(show.show.id)}
-              >
-                Show Details
-              </button>
-            </div>
-          </li>
-        ))}
-      </ul>
-      {shows.length > 6 && (
-        <div className="flex justify-center mt-4">
-          <button
-            className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-semibold py-2 px-4 rounded"
-            onClick={toggleShowAllData}
-          >
-            {getButtonText()}
-          </button>
-        </div>
-      )}
-    </div>
+    <>
+      {' '}
+      <Navbar></Navbar>
+      <div className="container mx-auto py-8">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {visibleShows.map((show) => (
+            <li
+              key={show.show.id}
+              className="bg-white rounded shadow p-6 flex flex-col justify-between"
+            >
+              <div>
+                <img
+                  className="h-64 w-full object-cover"
+                  src={show.show.image.original}
+                  alt=""
+                />
+                <h2 className="text-xl font-bold mb-2">{show.show.name}</h2>
+              </div>
+              <div className="mt-4">
+                <button
+                  className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-semibold py-2 px-4 rounded"
+                  onClick={() => redirectToDetails(show.show.id)}
+                >
+                  Show Details
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
+        {shows.length > 6 && (
+          <div className="flex justify-center mt-4">
+            <button
+              className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-semibold py-2 px-4 rounded"
+              onClick={toggleShowAllData}
+            >
+              {getButtonText()}
+            </button>
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 

@@ -5,7 +5,6 @@ import Navbar from './Pages/Navbar/Navbar';
 const App = () => {
   return (
     <div>
-      <Navbar></Navbar>
       <Home></Home>
     </div>
   );
