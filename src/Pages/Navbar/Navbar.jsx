@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ActiveLink from '../../ActiveLink/ActiveLink';
 
 const Navbar = () => {
   return (
@@ -24,14 +25,14 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm font-semibold dropdown-content mt-3 p-2 shadow bg-white rounded-box w-52"
+            className="menu menu-sm font-semibold dropdown-content mt-3 p-2 text-white shadow bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 rounded-box w-52 "
           >
             <li>
-              <Link to={'/'}>Home</Link>
+              <ActiveLink to={'/'}>Home</ActiveLink>
             </li>
 
             <li>
-              <Link to={'/bookedTicket'}>Bookings</Link>
+              <ActiveLink to={'/bookedTicket'}>Bookings</ActiveLink>
             </li>
           </ul>
         </div>
@@ -59,11 +60,11 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu text-white font-semibold menu-horizontal px-1">
           <li>
-            <Link to={'/'}>Home</Link>
+            <ActiveLink to={'/'}>Home</ActiveLink>
           </li>
 
           <li>
-            <Link to={`/bookedTicket`}>Bookings</Link>
+            <ActiveLink to={`/bookedTicket`}>Bookings</ActiveLink>
           </li>
         </ul>
       </div>

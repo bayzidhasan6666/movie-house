@@ -71,7 +71,9 @@ const ShowDetails = () => {
   };
 
   if (!show) {
-    return <progress className="progress w-56 mx-auto flex mt-20"></progress>;
+    return (
+      <progress className="progress bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 w-56 mx-auto flex mt-20"></progress>
+    );
   }
 
   return (
