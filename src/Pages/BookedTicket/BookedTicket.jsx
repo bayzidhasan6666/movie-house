@@ -13,17 +13,20 @@ const BookedTicket = () => {
     }
   }, []);
 
-  if (bookedMovies.length === 0) {
-    return (
-      <h1 className="text-2xl text-center mt-20 font-bold mb-4">
-        No Movie Ticket Booked
-      </h1>
-    );
-  }
-
   const goBack = () => {
     navigate(-1);
   };
+
+  if (bookedMovies.length === 0) {
+    return (
+      <>
+        <Navbar></Navbar>{' '}
+        <h1 className="text-2xl text-center mt-20 font-bold mb-4">
+          No Movie Ticket Booked
+        </h1>
+      </>
+    );
+  }
 
   return (
     <>
